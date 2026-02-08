@@ -1,4 +1,3 @@
-
 export interface NavItem {
   label: string;
   href: string;
@@ -16,5 +15,6 @@ export interface UniqueFeature {
 
 export interface Benefit {
   title: string;
+  description: string;
   iconName: string;
 }
