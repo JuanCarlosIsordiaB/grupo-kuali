@@ -291,11 +291,11 @@ const App: React.FC = () => {
           <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-white to-transparent z-10" />
           <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-white to-transparent z-10" />
 
-          <div className="flex gap-16 animate-infinite-scroll whitespace-nowrap items-center py-6">
+          <div className="flex gap-4 md:gap-8 animate-infinite-scroll whitespace-nowrap items-center py-6">
             {extendedAllianceLogos.map((logo, i) => (
               <div
                 key={`${logo.fileName}-${i}`}
-                className="h-24 md:h-28 w-56 md:w-64 flex items-center justify-center"
+                className="h-28 md:h-32 w-64 md:w-72 flex items-center justify-center"
               >
                 <img
                   src={encodeURI(`/images/alianzas/${logo.fileName}`)}
@@ -335,7 +335,7 @@ const App: React.FC = () => {
 
               <div className="grid grid-cols-2 gap-6 mt-16">
                 <div className="p-8 bg-white rounded-2xl shadow-sm border border-stone-200">
-                  <h5 className="font-bold text-[40px] uppercase tracking-widest text-amber-700 mb-2">
+                  <h5 className="font-bold text-2xl md:text-3xl lg:text-[40px] uppercase tracking-[0.25em] md:tracking-widest leading-none text-amber-700 mb-2 text-balance">
                     VISIÓN
                   </h5>
                   <p className="text-stone-700 text-sm leading-relaxed">
@@ -345,7 +345,7 @@ const App: React.FC = () => {
                   </p>
                 </div>
                 <div className="p-8 bg-white rounded-2xl shadow-sm border border-stone-200">
-                  <h5 className="font-bold text-[40px] uppercase tracking-widest text-amber-700 mb-2">
+                  <h5 className="font-bold text-2xl md:text-3xl lg:text-[40px] uppercase tracking-[0.25em] md:tracking-widest leading-none text-amber-700 mb-2 text-balance">
                     MISIÓN
                   </h5>
                   <p className="text-stone-700 text-sm leading-relaxed">
