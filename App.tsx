@@ -17,7 +17,6 @@ import {
   UNIQUE_FEATURES,
   BENEFITS,
   VALUES,
-  CLIENTS,
   IconMap,
 } from "./constants";
 
@@ -67,8 +66,12 @@ const Navbar = () => {
             className="flex items-center gap-3 group cursor-pointer"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            <div className="w-10 h-10 bg-stone-900 rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
-              <span className="text-white font-bold text-xl">K</span>
+            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
+              <img
+                src="/images/logo/WhatsApp_Image_2026-02-15_at_10.16.33_AM-removebg-preview.png"
+                alt="Grupo Kuali"
+                className="w-7 h-7 object-contain"
+              />
             </div>
             <span
               className={`text-2xl font-bold tracking-tighter transition-colors ${scrolled ? "text-stone-900" : "text-white"}`}
@@ -180,7 +183,35 @@ const SectionTitle = ({
 );
 
 const App: React.FC = () => {
-  const extendedClients = [...CLIENTS, ...CLIENTS, ...CLIENTS];
+  const allianceLogos = [
+    {
+      fileName: "WhatsApp Image 2026-02-15 at 10.10.01 AM (1).jpeg",
+      alt: "Logo aliado 1",
+    },
+    {
+      fileName: "WhatsApp_Image_2026-02-15_at_10.10.01_AM-removebg-preview.png",
+      alt: "Logo aliado 2",
+    },
+    {
+      fileName: "WhatsApp_Image_2026-02-15_at_10.10.02_AM-removebg-preview.png",
+      alt: "Logo aliado 3",
+    },
+    {
+      fileName:
+        "WhatsApp_Image_2026-02-15_at_10.10.02_AM__1_-removebg-preview.png",
+      alt: "Logo aliado 4",
+    },
+    {
+      fileName:
+        "WhatsApp_Image_2026-02-15_at_10.10.02_AM__2_-removebg-preview.png",
+      alt: "Logo aliado 5",
+    },
+  ];
+  const extendedAllianceLogos = [
+    ...allianceLogos,
+    ...allianceLogos,
+    ...allianceLogos,
+  ];
 
   return (
     <div className="overflow-x-hidden selection:bg-amber-200 selection:text-amber-900">
@@ -260,14 +291,19 @@ const App: React.FC = () => {
           <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-white to-transparent z-10" />
           <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-white to-transparent z-10" />
 
-          <div className="flex gap-20 animate-infinite-scroll whitespace-nowrap items-center py-4">
-            {extendedClients.map((client, i) => (
-              <span
-                key={i}
-                className="text-4xl md:text-6xl font-bold text-stone-200 hover:text-stone-900 transition-colors cursor-default tracking-tighter uppercase select-none"
+          <div className="flex gap-16 animate-infinite-scroll whitespace-nowrap items-center py-6">
+            {extendedAllianceLogos.map((logo, i) => (
+              <div
+                key={`${logo.fileName}-${i}`}
+                className="h-24 md:h-28 w-56 md:w-64 flex items-center justify-center"
               >
-                {client}
-              </span>
+                <img
+                  src={encodeURI(`/images/alianzas/${logo.fileName}`)}
+                  alt={logo.alt}
+                  className="w-full h-full object-contain"
+                  loading="lazy"
+                />
+              </div>
             ))}
           </div>
         </div>
