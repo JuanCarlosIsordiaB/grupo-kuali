@@ -360,7 +360,7 @@ const App: React.FC = () => {
             <div className="relative">
               <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=800"
+                  src="/images/extras/{BADF8567-697A-4D54-A31B-04FF896348D5}.png"
                   className="w-full h-full object-cover"
                   alt="Infraestructura Kuali"
                 />
