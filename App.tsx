@@ -5,6 +5,9 @@ import {
   Phone,
   Mail,
   MapPin,
+  Instagram,
+  Linkedin,
+  Facebook,
   ChevronRight,
   ArrowRight,
   Star,
@@ -66,7 +69,9 @@ const Navbar = () => {
             className="flex items-center gap-3 group cursor-pointer"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
+            <div
+              className={`w-10 h-10 rounded-full flex items-center justify-center transition-transform group-hover:scale-110 ${scrolled ? "bg-white" : "bg-transparent"}`}
+            >
               <img
                 src="/images/logo/WhatsApp_Image_2026-02-15_at_10.16.33_AM-removebg-preview.png"
                 alt="Grupo Kuali"
@@ -182,7 +187,28 @@ const SectionTitle = ({
   </div>
 );
 
+const WhatsAppIcon = ({ className = "" }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+    aria-hidden="true"
+  >
+    <path d="M20.52 3.48A11.86 11.86 0 0012.06 0C5.5 0 .18 5.32.18 11.88c0 2.1.55 4.16 1.6 5.98L0 24l6.33-1.66a11.86 11.86 0 005.73 1.46h.01c6.56 0 11.88-5.32 11.88-11.88 0-3.17-1.23-6.15-3.43-8.44zm-8.45 18.3h-.01a9.9 9.9 0 01-5.04-1.38l-.36-.22-3.76.98 1-3.66-.24-.38a9.88 9.88 0 01-1.52-5.24c0-5.45 4.44-9.9 9.9-9.9 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 012.9 7c0 5.46-4.44 9.9-9.86 9.9zm5.43-7.43c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.69.15-.2.3-.79.98-.96 1.18-.18.2-.35.22-.65.08-.3-.15-1.26-.47-2.4-1.5a8.95 8.95 0 01-1.66-2.06c-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.52-.08-.15-.69-1.66-.95-2.27-.25-.6-.5-.52-.69-.53h-.58c-.2 0-.53.07-.8.37-.28.3-1.05 1.02-1.05 2.49 0 1.46 1.08 2.88 1.23 3.08.15.2 2.12 3.23 5.13 4.53.72.31 1.29.5 1.73.64.73.23 1.4.2 1.93.12.59-.09 1.78-.73 2.03-1.44.25-.7.25-1.31.17-1.43-.07-.12-.27-.2-.57-.35z" />
+  </svg>
+);
+
 const App: React.FC = () => {
+  const [showFloatingWhatsapp, setShowFloatingWhatsapp] = useState(true);
+  const contactPhone = "4448035790";
+  const whatsappMessage =
+    "Hola Grupo Kuali, me gustaría recibir información sobre sus servicios de alimentación.";
+  const whatsappHref = `https://wa.me/52${contactPhone}?text=${encodeURIComponent(whatsappMessage)}`;
+  const emailSubject = "Solicitud de información - Grupo Kuali";
+  const emailBody =
+    "Hola Grupo Kuali,\n\nMe gustaría recibir información sobre sus servicios de alimentación.\n\nGracias.";
+  const emailHref = `mailto:ventas@grupokuali.com.mx?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+
   const allianceLogos = [
     {
       fileName: "WhatsApp Image 2026-02-15 at 10.10.01 AM (1).jpeg",
@@ -504,16 +530,43 @@ const App: React.FC = () => {
               </p>
               <div className="flex gap-4">
                 <a
-                  href="tel:4448035790"
+                  href={`tel:${contactPhone}`}
                   className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors cursor-pointer border border-white/10 group"
                 >
                   <Phone className="w-4 h-4 text-stone-400 group-hover:text-white" />
                 </a>
                 <a
-                  href="mailto:ventas@grupokuali.com.mx"
+                  href={emailHref}
                   className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors cursor-pointer border border-white/10 group"
                 >
                   <Mail className="w-4 h-4 text-stone-400 group-hover:text-white" />
+                </a>
+                <a
+                  href="https://www.instagram.com/grupokuali?igsh=bzF6aXZuYm4yYWl0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram Grupo Kuali"
+                  className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors cursor-pointer border border-white/10 group"
+                >
+                  <Instagram className="w-4 h-4 text-stone-400 group-hover:text-white" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/grupo-kuali/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn Grupo Kuali"
+                  className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors cursor-pointer border border-white/10 group"
+                >
+                  <Linkedin className="w-4 h-4 text-stone-400 group-hover:text-white" />
+                </a>
+                <a
+                  href="https://www.facebook.com/share/1E7HVXGERL/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook Grupo Kuali"
+                  className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors cursor-pointer border border-white/10 group"
+                >
+                  <Facebook className="w-4 h-4 text-stone-400 group-hover:text-white" />
                 </a>
               </div>
             </div>
@@ -580,6 +633,15 @@ const App: React.FC = () => {
                     444.803.5790
                   </p>
                 </div>
+                <a
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 bg-amber-600 hover:bg-amber-500 text-white px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest transition-colors"
+                >
+                  <WhatsAppIcon className="w-4 h-4" />
+                  WhatsApp
+                </a>
               </div>
             </div>
           </div>
@@ -600,6 +662,29 @@ const App: React.FC = () => {
           </div>
         </div>
       </footer>
+
+      {showFloatingWhatsapp && (
+        <div className="fixed bottom-6 right-6 z-[120]">
+          <div className="relative">
+            <button
+              onClick={() => setShowFloatingWhatsapp(false)}
+              aria-label="Cerrar botón de WhatsApp"
+              className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-stone-900 text-white border border-white/20 hover:bg-stone-800 transition-colors flex items-center justify-center"
+            >
+              <X className="w-4 h-4" />
+            </button>
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir WhatsApp"
+              className="w-16 h-16 rounded-full bg-amber-600 hover:bg-amber-500 text-white shadow-xl flex items-center justify-center transition-colors"
+            >
+              <WhatsAppIcon className="w-9 h-9" />
+            </a>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
