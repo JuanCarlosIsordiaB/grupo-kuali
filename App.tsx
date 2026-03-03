@@ -309,9 +309,9 @@ const App: React.FC = () => {
         className="py-20 bg-white border-b border-stone-100 relative scroll-mt-24"
       >
         <div className="max-w-7xl mx-auto px-6 mb-12">
-          <h4 className="text-[11px] font-bold uppercase tracking-[0.5em] text-stone-400 text-center">
+          <h2 className="text-[11px] font-bold uppercase tracking-[0.5em] text-stone-400 text-center">
             ALIANZAS ESTRATÉGICAS
-          </h4>
+          </h2>
         </div>
         <div className="flex overflow-hidden relative">
           <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-white to-transparent z-10" />
@@ -361,9 +361,9 @@ const App: React.FC = () => {
 
               <div className="grid grid-cols-2 gap-6 mt-16">
                 <div className="p-8 bg-white rounded-2xl shadow-sm border border-stone-200">
-                  <h5 className="font-bold text-2xl md:text-3xl lg:text-[40px] uppercase tracking-[0.25em] md:tracking-widest leading-none text-amber-700 mb-2 text-balance">
+                  <h3 className="font-bold text-2xl md:text-3xl lg:text-[40px] uppercase tracking-[0.25em] md:tracking-widest leading-none text-amber-700 mb-2 text-balance">
                     VISIÓN
-                  </h5>
+                  </h3>
                   <p className="text-stone-700 text-sm leading-relaxed">
                     "Ser la empresa lider para comedores corporativos
                     multinacionales, reconocida por versatilidad culinaria y
@@ -371,9 +371,9 @@ const App: React.FC = () => {
                   </p>
                 </div>
                 <div className="p-8 bg-white rounded-2xl shadow-sm border border-stone-200">
-                  <h5 className="font-bold text-2xl md:text-3xl lg:text-[40px] uppercase tracking-[0.25em] md:tracking-widest leading-none text-amber-700 mb-2 text-balance">
+                  <h3 className="font-bold text-2xl md:text-3xl lg:text-[40px] uppercase tracking-[0.25em] md:tracking-widest leading-none text-amber-700 mb-2 text-balance">
                     MISIÓN
-                  </h5>
+                  </h3>
                   <p className="text-stone-700 text-sm leading-relaxed">
                     "Nutrir talento global con una propuesta que integra sazon
                     local y cocina internacional, bajo estricta seguridad e
@@ -500,9 +500,9 @@ const App: React.FC = () => {
                     {IconMap[b.iconName]}
                   </div>
                 </div>
-                <h4 className="text-[13px] font-bold uppercase tracking-widest text-stone-900 group-hover:text-white leading-tight">
+                <h3 className="text-[13px] font-bold uppercase tracking-widest text-stone-900 group-hover:text-white leading-tight">
                   {b.title}
-                </h4>
+                </h3>
                 <p className="mt-4 text-[12px] leading-relaxed text-stone-500 group-hover:text-stone-300">
                   {b.description}
                 </p>
@@ -572,9 +572,9 @@ const App: React.FC = () => {
             </div>
 
             <div className="lg:col-span-4">
-              <h5 className="text-[11px] font-bold uppercase tracking-[0.3em] text-amber-600 mb-8">
+              <h2 className="text-[11px] font-bold uppercase tracking-[0.3em] text-amber-600 mb-8">
                 NAVEGACIÓN
-              </h5>
+              </h2>
               <div className="grid grid-cols-2 gap-4">
                 <ul className="space-y-4 font-bold text-xs tracking-widest">
                   {NAV_LINKS.slice(0, 3).map((l) => (
@@ -616,9 +616,9 @@ const App: React.FC = () => {
             </div>
 
             <div className="lg:col-span-4">
-              <h5 className="text-[11px] font-bold uppercase tracking-[0.3em] text-amber-600 mb-8">
+              <h2 className="text-[11px] font-bold uppercase tracking-[0.3em] text-amber-600 mb-8">
                 CONTACTO DIRECTO
-              </h5>
+              </h2>
               <div className="space-y-8">
                 <div className="flex gap-4">
                   <MapPin className="w-5 h-5 text-amber-600 shrink-0" />
